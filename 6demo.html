@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo</title>
+    </head>
+    <body onload="Animate()">
+        <img src="images/road.jpg" style="height: 200px;width: 100%; position: absolute;left: 10px; top: 0px;" id="d4">
+        <img src="images/Car.jpg" style="height: 200px;width: 200px; position: absolute;left: 10px; top: 0px;" id="d2">
+        <img src="images/car2.jpg" style="height: 200px;width: 200px; position: absolute;right: 10px; top: 0px;" id="d3">
+        <script>
+            var d2 = document.getElementById("d2");
+            var d3 = document.getElementById("d3");
+            left = 10;
+            right = 10;
+
+            function Animate(){
+                setInterval(Move,100);
+            }
+            function Move(){
+                left = left + 1;
+                right = right + 1;
+                d2.style.left = left + "px";
+                d3.style.right = right + "px";
+            }
+        </script>
+    </body>
+</html>

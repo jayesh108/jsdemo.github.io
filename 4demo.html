@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo</title>
+    </head>
+    <body onload="change()">
+        <div style="height: 100px;width: 100%;" id="myDiv">
+            <a href="https://www.sunbeaminfo.com/" target="_blank">
+                <img src="images/ad1.jpg" id="imgad1" style="height: 100px;width: 100%;">
+            </a>
+        </div>
+        <hr>
+        <script>
+            var d1 = document.getElementById("myDiv");
+            var flag = true;
+
+            function change(){
+                window.setInterval(changeAd,1000);
+            }
+            function ChangeAd(){
+                if(flag==true){
+                    d1.innerHTML=`<a href="https://www.cdac.in/" target="_blank">
+                                  <img src="images/ad2.jpg" id="imgad2" style="height: 100px;width: 100%;">
+                                 </a>`
+                    flag = false;
+                }else{
+                    d1.innerHTML=`<a href="https://www.sunbeaminfo.com/" target="_blank">
+                                <img src="images/ad1.jpg" id="imgad1" style="height: 100px;width: 100%;">
+                                </a>`
+                    flag = true;
+
+                }
+            }
+        </script>
+    </body>
+</html>

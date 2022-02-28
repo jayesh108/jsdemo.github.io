@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo</title>
+    </head>
+    <body>
+        <input type="button" id="btn1" value="start" onclick="startcounting()">
+        <input type="button" id="btn2" value="stop" onclick="stopcounting()">
+        <div style="height: 100px;
+                    width: 100px;
+                    background-color: yellow;
+                    text-align: center;
+                    font-size: 20px;"
+                    id="myDiv"></div>
+    </body> 
+    <script>
+        var counter = 0;
+        var reference = undefined;
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        btn2.disabled = "disabled";
+
+        function startcounting(){
+            btn1.disabled = "disabled";
+            btn2.disabled = null;
+
+            reference = window.setInterval(change,100);
+        }
+        function stopcounting(){
+            if(reference != undefined){
+                window.clearInterval(reference);
+            }else{
+                window.alert("click start first");
+            }
+            btn2.disabled = "disabled";
+            btn1.disabled = null;
+        }
+        function change(){
+            var d1 = document.getElementById("myDiv");
+            d1.innerHTML = counter;
+            counter = counter + 1;
+        }
+    </script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo</title>
+    </head>
+    <body>
+        <input type="button" value="click me" onclick="change()">
+        <br>
+        <div style="height: 100px; width: 100px;background-color: red;font-size: 10px;" id="myDiv"></div>
+    <script>
+        var d1 = document.getElementById("myDiv");
+        var flag = true;
+
+        function change(){
+            window.setInterval(flipflop, 1000);
+        }
+        function flipflop(){
+            if(flag==true){
+                d1.style.backgroundColor = "yellow";
+                d1.style.height = "200px";
+                d1.style.width = "200px";
+                d1.style.fontSize = "20px";
+                d1.innerHTML = "Attention";
+                flag = false;
+            }else{
+                d1.style.backgroundColor = "red";
+                d1.style.height = "100px";
+                d1.style.width = "100px";
+                d1.style.fontSize = "10px";
+                d1.innerHTML ="attention"
+                flag = true;
+            }
+        }
+    </script>
+    </body>
+</html>

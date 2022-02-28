@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo</title>
+    </head>
+    <body>
+        <input type="button" value="start" onclick="startcount()">
+        <input type="button" value="stop" onclick="stopcount()">
+        <div style="height: 100px;
+                    width: 100px;
+                    background-color: yellow;
+                    font-size: 20px;
+                    text-align: center;"
+                    id="myDiv">
+        </div>
+        <script>
+            var counter = 0;
+
+            var reference = undefined;
+
+            function startcount(){
+                reference = window.setInterval(change, 1000);
+            }
+            function stopcount(){
+                if(reference != undefined){
+                    window.clearInterval(reference);
+                }else{
+                    window.alert("Click On Start First");
+                }
+            }
+            function change(){
+                var d1 = document.getElementById("myDiv");
+
+                d1.innerHTML = counter;
+
+                counter = counter + 1;
+                
+            }
+        </script>
+    </body>
+</html>

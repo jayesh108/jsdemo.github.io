@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <hea>
+        <title>Demo</title>
+    </hea>
+    <body>
+        <div id="d1" style="height: 200px;width: 200px;background-color: red;position: absolute;left: 10px;top: 0;"></div>
+        <div id="d2" style="height: 200px;width: 200px;background-color: yellow;position: absolute;left: 10px;top: 0px;"></div>
+        <input type="button" value="click" onclick="Animate()"
+        style="position: absolute;left: 50px; top: 250px;">
+    </body>
+    <script>
+        var d2 = document.getElementById("d2");
+        var leftCounter = 10;
+        function Animate(){
+            setInterval(Move,100);
+        }
+        function Move(){
+            leftCounter = leftCounter + 1;
+            d2.style.left = leftCounter + "px";
+        }
+    </script>
+</html>
